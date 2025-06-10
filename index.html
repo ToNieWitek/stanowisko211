@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szafa Rackowa - Pracownia IT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="rack">
+                <div class="patchpanel top">
+                    <div class="ports">
+                        <div class="patchpanel-section">
+                            <div class="port-group">
+                                <div class="port-label white"></div>
+                                <div class="port rj45"></div>
+                                <div class="port-number">1</div>
+                            </div>
+                            <div class="port-group">
+                                <div class="port-label white"></div>
+                                <div class="port rj45"></div>
+                                <div class="port-number">2</div>
+                            </div>
+                            <div class="port-group">
+                                <div class="port-label white"></div>
+                                <div class="port rj45"></div>
+                                <div class="port-number">3</div>
+                            </div>
+                            <div class="port-group">
+                                <div class="port-label white"></div>
+                                <div class="port rj45"></div>
+                                <div class="port-number">4</div>
+                            </div>
+                            <div class="port-group">
+                                <div class="port-label white"></div>
+                                <div class="port rj45"></div>
+                                <div class="port-number">5</div>
+                            </div>
+                            <div class="port-group">
+                                <div class="port-label white"></div>
+                                <div class="port rj45"></div>
+                                <div class="port-number">6</div>
+                            </div>
+                        </div>
+                        <div class="patchpanel-section">
+                            <div class="port-group"><div class="port-label white"></div><div class="port rj45"></div><div class="port-number">7</div></div>
+                            <div class="port-group"><div class="port-label white"></div><div class="port rj45"></div><div class="port-number">8</div></div>
+                            <div class="port-group"><div class="port-label white"></div><div class="port rj45"></div><div class="port-number">9</div></div>
+                            <div class="port-group"><div class="port-label white"></div><div class="port rj45"></div><div class="port-number">10</div></div>
+                            <div class="port-group"><div class="port-label white"></div><div class="port rj45"></div><div class="port-number">11</div></div>
+                            <div class="port-group"><div class="port-label white"></div><div class="port rj45"></div><div class="port-number">12</div></div>
+                        </div>
+                        <div class="patchpanel-section">
+                            <div class="port-group"><div class="port-label white"></div><div class="port rj45"></div><div class="port-number">13</div></div>
+                            <div class="port-group"><div class="port-label white"></div><div class="port rj45"></div><div class="port-number">14</div></div>
+                            <div class="port-group"><div class="port-label white"></div><div class="port rj45"></div><div class="port-number">15</div></div>
+                            <div class="port-group"><div class="port-label white"></div><div class="port rj45"></div><div class="port-number">16</div></div>
+                            <div class="port-group"><div class="port-label white"></div><div class="port rj45"></div><div class="port-number">17</div></div>
+                            <div class="port-group"><div class="port-label white"></div><div class="port rj45"></div><div class="port-number">18</div></div>
+                        </div>
+                        <div class="patchpanel-section">
+                            <div class="port-group"><div class="port-label white"></div><div class="port rj45"></div><div class="port-number">19</div></div>
+                            <div class="port-group"><div class="port-label white"></div><div class="port rj45"></div><div class="port-number">20</div></div>
+                            <div class="port-group"><div class="port-label white"></div><div class="port rj45"></div><div class="port-number">21</div></div>
+                            <div class="port-group"><div class="port-label white"></div><div class="port rj45"></div><div class="port-number">22</div></div>
+                            <div class="port-group"><div class="port-label white"></div><div class="port rj45"></div><div class="port-number">23</div></div>
+                            <div class="port-group"><div class="port-label white"></div><div class="port rj45"></div><div class="port-number">24</div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="switch" id="switch1">
+                    <div class="switch-inner">
+                        <div class="switch-left">
+                            <div class="switch-power">
+                                <div class="power-port"></div>
+                            </div>
+                            <div class="leds-container">
+                                <div class="leds-row">
+                                    <div class="led-col"><div class="led" data-led="PWR"></div><div class="led-label">PWR</div></div>
+                                    <div class="led-col"><div class="led" data-led="1"></div><div class="led-label">1</div></div>
+                                    <div class="led-col"><div class="led" data-led="3"></div><div class="led-label">3</div></div>
+                                    <div class="led-col"><div class="led" data-led="5"></div><div class="led-label">5</div></div>
+                                    <div class="led-col"><div class="led" data-led="7"></div><div class="led-label">7</div></div>
+                                    <div class="led-col"><div class="led" data-led="SFP1"></div><div class="led-label">SFP1</div></div>
+                                </div>
+                                <div class="leds-row">
+                                    <div class="led-col"><div class="led" data-led="SYS"></div><div class="led-label">SYS</div></div>
+                                    <div class="led-col"><div class="led" data-led="2"></div><div class="led-label">2</div></div>
+                                    <div class="led-col"><div class="led" data-led="4"></div><div class="led-label">4</div></div>
+                                    <div class="led-col"><div class="led" data-led="6"></div><div class="led-label">6</div></div>
+                                    <div class="led-col"><div class="led" data-led="8"></div><div class="led-label">8</div></div>
+                                    <div class="led-col"><div class="led" data-led="SFP2"></div><div class="led-label">SFP2</div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="switch-right">
+                            <div class="ports">
+                                <div class="port-group"><div class="port-label"></div><div class="port rj45"></div><div class="port-number">1</div></div>
+                                <div class="port-group"><div class="port-label"></div><div class="port rj45"></div><div class="port-number">2</div></div>
+                                <div class="port-group"><div class="port-label"></div><div class="port rj45"></div><div class="port-number">3</div></div>
+                                <div class="port-group"><div class="port-label"></div><div class="port rj45"></div><div class="port-number">4</div></div>
+                                <div class="port-group"><div class="port-label"></div><div class="port rj45"></div><div class="port-number">5</div></div>
+                                <div class="port-group"><div class="port-label"></div><div class="port rj45"></div><div class="port-number">6</div></div>
+                                <div class="port-group"><div class="port-label"></div><div class="port rj45"></div><div class="port-number">7</div></div>
+                                <div class="port-group"><div class="port-label"></div><div class="port rj45"></div><div class="port-number">8</div></div>
+                                <div class="port-group"><div class="port-label"></div><div class="port sfp"></div><div class="port-number">SFP1</div></div>
+                                <div class="port-group"><div class="port-label"></div><div class="port sfp"></div><div class="port-number">SFP2</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="patchpanel bottom">
+                    <div class="ports">
+                        <div class="patchpanel-section">
+                            <div class="port-group"><div class="port-label white"></div><div class="port rj45"></div><div class="port-number">1</div></div>
+                            <div class="port-group"><div class="port-label white"></div><div class="port rj45"></div><div class="port-number">2</div></div>
+                            <div class="port-group"><div class="port-label white"></div><div class="port rj45"></div><div class="port-number">3</div></div>
+                            <div class="port-group"><div class="port-label white"></div><div class="port rj45"></div><div class="port-number">4</div></div>
+                            <div class="port-group"><div class="port-label white"></div><div class="port rj45"></div><div class="port-number">5</div></div>
+                            <div class="port-group"><div class="port-label white"></div><div class="port rj45"></div><div class="port-number">6</div></div>
+                        </div>
+                        <div class="patchpanel-section">
+                            <div class="port-group"><div class="port-label blue"></div><div class="port rj45"></div><div class="port-number">7</div></div>
+                            <div class="port-group"><div class="port-label yellow"></div><div class="port rj45"></div><div class="port-number">8</div></div>
+                            <div class="port-group"><div class="port-label black"></div><div class="port rj45"></div><div class="port-number">9</div></div>
+                            <div class="port-group"><div class="port-label white"></div><div class="port rj45"></div><div class="port-number">10</div></div>
+                            <div class="port-group"><div class="port-label white"></div><div class="port rj45"></div><div class="port-number">11</div></div>
+                            <div class="port-group"><div class="port-label red"></div><div class="port rj45"></div><div class="port-number">12</div></div>
+                        </div>
+                        <div class="patchpanel-section">
+                            <div class="port-group"><div class="port-label blue"></div><div class="port rj45"></div><div class="port-number">13</div></div>
+                            <div class="port-group"><div class="port-label yellow"></div><div class="port rj45"></div><div class="port-number">14</div></div>
+                            <div class="port-group"><div class="port-label black"></div><div class="port rj45"></div><div class="port-number">15</div></div>
+                            <div class="port-group"><div class="port-label white"></div><div class="port rj45"></div><div class="port-number">16</div></div>
+                            <div class="port-group"><div class="port-label white"></div><div class="port rj45"></div><div class="port-number">17</div></div>
+                            <div class="port-group"><div class="port-label red"></div><div class="port rj45"></div><div class="port-number">18</div></div>
+                        </div>
+                        <div class="patchpanel-section">
+                            <div class="port-group"><div class="port-label white"></div><div class="port rj45"></div><div class="port-number">19</div></div>
+                            <div class="port-group"><div class="port-label white"></div><div class="port rj45"></div><div class="port-number">20</div></div>
+                            <div class="port-group"><div class="port-label white"></div><div class="port rj45"></div><div class="port-number">21</div></div>
+                            <div class="port-group"><div class="port-label white"></div><div class="port rj45"></div><div class="port-number">22</div></div>
+                            <div class="port-group"><div class="port-label white"></div><div class="port rj45"></div><div class="port-number">23</div></div>
+                            <div class="port-group"><div class="port-label white"></div><div class="port rj45"></div><div class="port-number">24</div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="switch" id="switch2">
+                    <div class="switch-inner">
+                        <div class="switch-left">
+                            <div class="switch-power">
+                                <div class="power-port"></div>
+                            </div>
+                            <div class="leds-container">
+                                <div class="leds-row">
+                                    <div class="led-col"><div class="led" data-led="PWR"></div><div class="led-label">PWR</div></div>
+                                    <div class="led-col"><div class="led" data-led="2"></div><div class="led-label">2</div></div>
+                                    <div class="led-col"><div class="led" data-led="4"></div><div class="led-label">4</div></div>
+                                    <div class="led-col"><div class="led" data-led="6"></div><div class="led-label">6</div></div>
+                                    <div class="led-col"><div class="led" data-led="8"></div><div class="led-label">8</div></div>
+                                    <div class="led-col"><div class="led" data-led="SFP2"></div><div class="led-label">SFP2</div></div>
+                                </div>
+                                <div class="leds-row">
+                                    <div class="led-col"><div class="led" data-led="SYS"></div><div class="led-label">SYS</div></div>
+                                    <div class="led-col"><div class="led" data-led="1"></div><div class="led-label">1</div></div>
+                                    <div class="led-col"><div class="led" data-led="3"></div><div class="led-label">3</div></div>
+                                    <div class="led-col"><div class="led" data-led="5"></div><div class="led-label">5</div></div>
+                                    <div class="led-col"><div class="led" data-led="7"></div><div class="led-label">7</div></div>
+                                    <div class="led-col"><div class="led" data-led="SFP1"></div><div class="led-label">SFP1</div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="switch-right">
+                            <div class="ports">
+                                <div class="port-group"><div class="port-label"></div><div class="port rj45"></div><div class="port-number">1</div></div>
+                                <div class="port-group"><div class="port-label"></div><div class="port rj45"></div><div class="port-number">2</div></div>
+                                <div class="port-group"><div class="port-label"></div><div class="port rj45"></div><div class="port-number">3</div></div>
+                                <div class="port-group"><div class="port-label"></div><div class="port rj45"></div><div class="port-number">4</div></div>
+                                <div class="port-group"><div class="port-label"></div><div class="port rj45"></div><div class="port-number">5</div></div>
+                                <div class="port-group"><div class="port-label"></div><div class="port rj45"></div><div class="port-number">6</div></div>
+                                <div class="port-group"><div class="port-label"></div><div class="port rj45"></div><div class="port-number">7</div></div>
+                                <div class="port-group"><div class="port-label"></div><div class="port rj45"></div><div class="port-number">8</div></div>
+                                <div class="port-group"><div class="port-label"></div><div class="port sfp"></div><div class="port-number">SFP1</div></div>
+                                <div class="port-group"><div class="port-label"></div><div class="port sfp"></div><div class="port-number">SFP2</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="computers-row">
+                    <div class="computers">
+                        <div class="computer lenovo">
+                            <span>Lenovo</span>
+                            <div class="computer-ports">
+                                <button class="power-btn"></button>
+                                <div class="power-port"></div>
+                            </div>
+                        </div>
+                        <div class="computer acer">
+                            <span>Acer</span>
+                            <div class="computer-ports">
+                                <button class="power-btn"></button>
+                                <div class="power-port"></div>
+                            </div>
+                        </div>
+                        <div class="computer acer">
+                            <span>Acer</span>
+                            <div class="computer-ports">
+                                <button class="power-btn"></button>
+                                <div class="power-port"></div>
+                            </div>
+                        </div>
+                        <div class="computer lenovo">
+                            <span>Lenovo</span>
+                            <div class="computer-ports">
+                                <button class="power-btn"></button>
+                                <div class="power-port"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="power-strip">
+                    <div class="strip">
+                        <div class="socket real">
+                            <div class="hole"></div><div class="hole"></div>
+                        </div>
+                        <div class="socket real">
+                            <div class="hole"></div><div class="hole"></div>
+                        </div>
+                        <div class="socket real">
+                            <div class="hole"></div><div class="hole"></div>
+                        </div>
+                        <div class="socket real">
+                            <div class="hole"></div><div class="hole"></div>
+                        </div>
+                        <div class="socket real">
+                            <div class="hole"></div><div class="hole"></div>
+                        </div>
+                        <div class="socket real">
+                            <div class="hole"></div><div class="hole"></div>
+                        </div>
+                        <div class="socket real">
+                            <div class="hole"></div><div class="hole"></div>
+                        </div>
+                        <div class="socket real">
+                            <div class="hole"></div><div class="hole"></div>
+                        </div>
+                        <button class="strip-switch"></button>
+                    </div>
+                </div>
+                <div class="power-strip">
+                    <div class="strip">
+                        <div class="socket real">
+                            <div class="hole"></div><div class="hole"></div>
+                        </div>
+                        <div class="socket real">
+                            <div class="hole"></div><div class="hole"></div>
+                        </div>
+                        <div class="socket real">
+                            <div class="hole"></div><div class="hole"></div>
+                        </div>
+                        <div class="socket real">
+                            <div class="hole"></div><div class="hole"></div>
+                        </div>
+                        <div class="socket real">
+                            <div class="hole"></div><div class="hole"></div>
+                        </div>
+                        <div class="socket real">
+                            <div class="hole"></div><div class="hole"></div>
+                        </div>
+                        <div class="socket real">
+                            <div class="hole"></div><div class="hole"></div>
+                        </div>
+                        <div class="socket real">
+                            <div class="hole"></div><div class="hole"></div>
+                        </div>
+                        <button class="strip-switch"></button>
+                    </div>
+                </div>
+                <div class="computers-row">
+                    <div class="computers">
+                        <div class="computer dell">
+                            <span>Dell</span>
+                            <div class="computer-ports">
+                                <button class="power-btn"></button>
+                                <div class="power-port"></div>
+                            </div>
+                        </div>
+                        <div class="computer dell">
+                            <span>Dell</span>
+                            <div class="computer-ports">
+                                <button class="power-btn"></button>
+                                <div class="power-port"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cable-management">
+                    <div class="cable-box">
+                        <div class="cable-section">
+                            <div class="cable-type power" data-cable-type="power">
+                                <div class="cable-icon">⚡</div>
+                                <span>Zasilanie</span>
+                            </div>
+                            <div class="cable-type network" data-cable-type="network">
+                                <div class="button-content">
+                                    <div class="cable-icon">🔌</div>
+                                    <span>Rj45</span>
+                                </div>
+                                <div class="network-colors">
+                                    <div class="color-option blue" data-color="blue"></div>
+                                    <div class="color-option yellow" data-color="yellow"></div>
+                                    <div class="color-option black" data-color="black"></div>
+                                    <div class="color-option red" data-color="red"></div>
+                                    <div class="color-option white" data-color="white"></div>
+                                    <div class="color-option turquoise" data-color="turquoise"></div>
+                                </div>
+                            </div>
+                            <div class="cable-type fiber" data-cable-type="fiber">
+                                <div class="cable-icon">💡</div>
+                                <span>Światłowód</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="top-right">
+            </div>
+            <div class="bottom-right">
+            </div>
+        </div>
+    </div>
+    <div class="task-list">
+        <h3>Do zrobienia:</h3>
+        <ul>
+            <li>Pętla na switchach</li>
+            <li>Łączenie dwóch switchy</li>
+            <li>Światłowody</li>
+            <li>Terminal</li>
+            <li>Port Console</li>
+        </ul>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

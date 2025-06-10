@@ -1,0 +1,793 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+.container {
+    display: flex;
+    height: 100vh;
+}
+.left {
+    width: 50%;
+    background: #222;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.rack {
+    width: 90%;
+    background: #333;
+    border-radius: 12px;
+    padding: 24px 16px;
+    box-shadow: 0 0 16px #0008;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.patchpanel, .switch, .power-strip, .computers-row {
+    background: #444;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+}
+.patchpanel span, .switch span, .power-strip span, .computers-row span {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 6px;
+}
+.right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.top-right, .bottom-right {
+    flex: 1;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 24px;
+}
+.bottom-right {
+    border-bottom: none;
+}
+.ports {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.patchpanel-section {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 4px;
+    justify-content: center;
+}
+.port-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 3px;
+}
+.port-label {
+    width: 18px;
+    height: 7px;
+    border-radius: 2px 2px 1px 1px;
+    margin-bottom: 2px;
+}
+.port-label.white { background: #fff; border: 1px solid #ccc; }
+.port-label.blue { background: #2196f3; }
+.port-label.yellow { background: #ffe066; }
+.port-label.black { background: #222; }
+.port-label.red { background: #e53935; }
+
+.port.rj45 {
+    width: 18px;
+    height: 16px;
+    background: #222;
+    border: 2px solid #888;
+    border-radius: 2px 2px 4px 4px;
+    position: relative;
+    margin-bottom: 2px;
+    box-shadow: 0 1px 2px #000a;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.port.rj45::before {
+    content: '';
+    display: block;
+    width: 12px;
+    height: 7px;
+    background: #111;
+    border-radius: 1px 1px 2px 2px;
+    position: absolute;
+    top: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.port.rj45::after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 2px;
+    background: #ffd600;
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 1px;
+    opacity: 0.7;
+}
+
+.switch .ports {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+.port.console {
+    width: 18px;
+    height: 18px;
+    background: #666;
+    border-radius: 50%;
+    border: 2px solid #aaa;
+    margin-right: 8px;
+    position: relative;
+}
+.port.sfp {
+    width: 18px;
+    height: 16px;
+    background: #b0bec5;
+    border: 2px solid #607d8b;
+    border-radius: 2px 2px 4px 4px;
+    margin-bottom: 2px;
+    position: relative;
+}
+.port.sfp::before {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 6px;
+    background: #789;
+    position: absolute;
+    top: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 1px;
+}
+.switch .leds {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 4px;
+}
+.led {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #222;
+    border: 1px solid #111;
+    box-shadow: 0 0 2px #000a;
+    margin-bottom: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+.led.on, 
+.led[data-led="PWR"].on,
+.led[data-led="SYS"].on {
+    background: #4CAF50;
+    box-shadow: 
+        0 0 5px #4CAF50,
+        0 0 10px #4CAF50;
+}
+
+.led.yellow {
+    background: #FFD700;
+    box-shadow: 
+        0 0 5px #FFD700,
+        0 0 10px #FFD700;
+}
+
+.led.green {
+    background: #4CAF50;
+    box-shadow: 
+        0 0 5px #4CAF50,
+        0 0 10px #4CAF50;
+}
+
+.led.yellow,
+.led.green,
+.led.on {
+    transition: 
+        background-color 0.5s ease-in-out,
+        box-shadow 0.5s ease-in-out;
+}
+
+.led[data-led="PWR"],
+.led[data-led="SYS"],
+.led[data-led="1"],
+.led[data-led="2"],
+.led[data-led="3"],
+.led[data-led="4"],
+.led[data-led="5"],
+.led[data-led="6"],
+.led[data-led="7"],
+.led[data-led="8"],
+.led[data-led="SFP1"],
+.led[data-led="SFP2"] {
+    background: #222;
+}
+
+.computers {
+    display: flex;
+    gap: 24px;
+    margin: 8px 0;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+}
+.computer {
+    width: 100px;
+    height: 40px;
+    background: linear-gradient(180deg, #23272b 70%, #181a1b 100%);
+    border: 2px solid #555;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 3px 8px #0006, 0 0 0 2px #111 inset;
+    padding: 4px 10px;
+}
+.computer::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #444, transparent);
+    border-radius: 2px;
+}
+.computer span {
+    font-size: 12px;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 0 1px 2px #000;
+}
+.computer-ports {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+.power-port {
+    width: 12px;
+    height: 12px;
+    background: #181818;
+    border: 2px solid #666;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 3px #000a inset;
+}
+.power-port::after {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: #444;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 2px #000 inset;
+}
+.power-btn {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid #666;
+    background: linear-gradient(145deg, #666, #444);
+    box-shadow: 0 1px 3px #000a, 0 0 0 1px #222 inset;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+}
+.power-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: #222;
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+.power-btn:active {
+    background: linear-gradient(145deg, #4caf50, #388e3c);
+    border-color: #81c784;
+}
+.power-btn:active::after {
+    background: #a5d6a7;
+    box-shadow: 0 0 8px #4caf50;
+}
+
+.computer.lenovo {
+    border-color: #1976d2;
+    background: linear-gradient(180deg, #1e88e5 5%, #23272b 20%, #181a1b 100%);
+}
+.computer.acer {
+    border-color: #43a047;
+    background: linear-gradient(180deg, #66bb6a 5%, #23272b 20%, #181a1b 100%);
+}
+.computer.dell {
+    border-color: #757575;
+    background: linear-gradient(180deg, #9e9e9e 5%, #23272b 20%, #181a1b 100%);
+}
+
+.strip {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 4px;
+    position: relative;
+}
+.socket {
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border: 1px solid #bbb;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px #0002;
+}
+.socket.real {
+    width: 16px;
+    height: 16px;
+    background: #f8f8f8;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    position: relative;
+    margin: 0 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.socket.real .hole {
+    width: 3px;
+    height: 6px;
+    background: #222;
+    border-radius: 2px;
+    margin: 0 1px;
+}
+.strip-switch {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    border: none;
+    background: #e53935;
+    margin-left: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 2px #000a;
+    transition: background 0.2s;
+}
+.strip-switch:active { background: #4caf50; }
+
+.switch-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 8px;
+}
+.switch-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    min-width: 170px;
+}
+.switch-power {
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.switch .power-port {
+    width: 14px;
+    height: 14px;
+}
+.leds-container {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.leds-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 6px;
+}
+.led-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 28px;
+}
+.switch-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+}
+.switch-right .ports {
+    display: flex;
+    gap: 8px;
+    margin: 0;
+}
+
+.cable-management {
+    background: #333;
+    border-radius: 6px;
+    padding: 8px;
+    margin-top: 8px;
+    border: 1px solid #444;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.cable-box {
+    background: linear-gradient(180deg, #2d2d2d, #262626);
+    border-radius: 4px;
+    padding: 6px;
+    border: 1px solid #3a3a3a;
+    box-shadow: 
+        0 1px 2px rgba(0,0,0,0.2),
+        inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+.cable-section {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+}
+
+.cable-type {
+    background: linear-gradient(180deg, #383838, #2a2a2a);
+    border-radius: 3px;
+    padding: 4px 6px;
+    cursor: pointer;
+    transition: all 0.15s;
+    border: 1px solid #444;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    min-width: 45px;
+    box-shadow: 
+        0 1px 2px rgba(0,0,0,0.15),
+        inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+.cable-type:hover {
+    transform: translateY(-1px);
+    box-shadow: 
+        0 2px 4px rgba(0,0,0,0.2),
+        inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+.cable-type.active {
+    background: linear-gradient(180deg, #1b5e20, #2d2d2d);
+    border-color: #4CAF50;
+    box-shadow: 
+        0 0 8px rgba(76, 175, 80, 0.3),
+        inset 0 1px 0 rgba(255,255,255,0.1);
+}
+
+.cable-type .cable-icon {
+    font-size: 14px;
+    filter: drop-shadow(0 1px 1px rgba(0,0,0,0.3));
+}
+
+.cable-type span {
+    color: #999;
+    font-size: 8px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+}
+
+.cable-type.power { 
+    border-color: #512da8;
+}
+.cable-type.power.active {
+    background: linear-gradient(180deg, #512da8, #2d2d2d);
+    border-color: #673ab7;
+    box-shadow: 
+        0 0 8px rgba(103, 58, 183, 0.3),
+        inset 0 1px 0 rgba(255,255,255,0.1);
+}
+
+.cable-type.network { 
+    border-color: #0d47a1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding-right: 12px;
+}
+.cable-type.network .button-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cable-type.network.active {
+    background: linear-gradient(180deg, #0d47a1, #2d2d2d);
+    border-color: #1976d2;
+    box-shadow: 
+        0 0 8px rgba(25, 118, 210, 0.3),
+        inset 0 1px 0 rgba(255,255,255,0.1);
+}
+
+.cable-type.fiber { 
+    border-color: #f57f17;
+}
+.cable-type.fiber.active {
+    background: linear-gradient(180deg, #f57f17, #2d2d2d);
+    border-color: #ffd700;
+    box-shadow: 
+        0 0 8px rgba(255, 215, 0, 0.3),
+        inset 0 1px 0 rgba(255,255,255,0.1);
+}
+
+.strip {
+    position: relative;
+}
+
+.strip-switch {
+    background: #c62828;
+    transition: background-color 0.3s;
+}
+
+.strip-switch.on {
+    background: #4CAF50;
+}
+
+.socket.real {
+    position: relative;
+    cursor: pointer;
+}
+
+.socket.real.connected::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: #4CAF50;
+    border-radius: 50%;
+    opacity: 0.6;
+}
+
+.computer.powered {
+    box-shadow: 0 0 15px rgba(76, 175, 80, 0.3);
+}
+
+.computer .power-btn.can-power {
+    background: linear-gradient(145deg, #666, #444);
+}
+
+.computer .power-btn.on {
+    background: linear-gradient(145deg, #4CAF50, #388E3C);
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+.cable {
+    position: absolute;
+    background: #666;
+    height: 2px;
+    pointer-events: none;
+    z-index: 100;
+    transform-origin: 0 0;
+}
+
+.cable.power {
+    background: #00ff00;
+    height: 3px;
+    opacity: 0.7;
+    box-shadow: 0 0 4px rgba(0, 255, 0, 0.3);
+}
+
+.cable.network {
+    background: #1976d2;
+    height: 2px;
+}
+
+.cable.fiber {
+    background: #ffd700;
+    height: 2px;
+}
+
+.computers-row {
+    background: #444;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.switch-power {
+    padding: 4px;
+    margin-bottom: 6px;
+}
+
+.switch .power-port {
+    width: 14px;
+    height: 14px;
+    background: #181818;
+    border: 2px solid #666;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 3px #000a inset;
+}
+
+.switch .power-port::after {
+    content: '';
+    display: block;
+    width: 5px;
+    height: 5px;
+    background: #444;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 2px #000 inset;
+}
+
+.led {
+    transition: background-color 0.3s;
+}
+
+.led.on {
+    background: #4CAF50;
+    box-shadow: 
+        0 0 5px #4CAF50,
+        0 0 10px #4CAF50;
+}
+
+.led[data-led="PWR"].on {
+    background: #4CAF50;
+    box-shadow: 
+        0 0 5px #4CAF50,
+        0 0 10px #4CAF50;
+}
+
+.led[data-led="SYS"].on {
+    background: #4CAF50;
+    box-shadow: 
+        0 0 5px #4CAF50,
+        0 0 10px #4CAF50;
+}
+
+.leds-container {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.leds-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 6px;
+}
+
+.led-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 28px;
+}
+
+.led-label,
+.port-number {
+    font-size: 9px;
+    color: #bbb;
+    margin-top: 2px;
+    text-align: center;
+}
+
+.network-colors {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    max-width: none;
+    align-items: center;
+    margin-top: 0;
+    justify-content: center;
+    width: 100%;
+}
+
+.color-option {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid #555;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.color-option:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 4px rgba(255,255,255,0.3);
+}
+
+.color-option.active {
+    box-shadow: 0 0 8px rgba(255,255,255,0.5);
+    border-color: #fff;
+}
+
+.color-option.blue { background-color: #2196f3; }
+.color-option.yellow { background-color: #ffd600; }
+.color-option.black { background-color: #212121; }
+.color-option.red { background-color: #f44336; }
+.color-option.white { background-color: #ffffff; }
+.color-option.turquoise { background-color: #00bcd4; }
+
+.cable.network.blue { background: #2196f3; }
+.cable.network.yellow { background: #ffd600; }
+.cable.network.black { background: #212121; }
+.cable.network.red { background: #f44336; }
+.cable.network.white { background: #ffffff; }
+.cable.network.turquoise { background: #00bcd4; }
+
+.cable.network {
+    height: 2px;
+    opacity: 0.8;
+}
+
+.task-list {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.task-list h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.task-list ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.task-list li {
+    margin-bottom: 5px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.task-list li:before {
+    content: "•";
+    position: absolute;
+    left: 5px;
+}
